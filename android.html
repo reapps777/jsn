@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/270/270780.png" type="image/png">
+    <title>JSON doge</title>
+    <link rel="stylesheet" href="android.css">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Android Encrypted JSON</h1>
+            <div class="subtitle">Generate JSON data with encrypted URLs</div>
+        </header>
+        
+        <div class="panel">
+            <h2>Select API Source</h2>
+            <div class="api-controls">
+                <button id="premierLeagueBtn" class="api-button">
+                    <i>⚽</i> Premier League
+                </button>
+                <button id="championsLeagueBtn" class="api-button">
+                    <i>🏆</i> UEFA Champions League
+                </button>
+                <button id="nbaBtn" class="api-button">
+                    <i>🏀</i> NBA
+                </button>
+                <button id="mlbBtn" class="api-button">
+                    <i>⚾</i> MLB
+                </button>
+                <!-- Add these two new buttons -->
+                <button id="nhlBtn" class="api-button">
+                    <i>🏒</i> NHL
+                </button>
+                <button id="europaLeagueBtn" class="api-button">
+                    <i>🏆</i> Europa League
+                </button>
+                <button id="allBtn" class="api-button">
+                    <i>🔄</i> Fetch All
+                </button>
+            </div>
+            
+            <div id="status" class="status" style="display: none;"></div>
+            <div id="loading" class="loading" style="display: none;">Fetching data from selected API</div>
+        </div>
+        
+        <!-- New panel for URL editing -->
+        <div class="panel url-editor-panel">
+            <h2>Edit Stream URLs</h2>
+            <div id="urlEditorContainer" class="url-editor-container">
+                <div class="no-urls-message">Generate match data first to add URLs</div>
+            </div>
+            <div style="text-align: right; margin-top: 15px;">
+                <button id="updateUrlsBtn" class="utility-button">
+                    <i>📝</i> Update URLs in JSON
+                </button>
+            </div>
+        </div>
+        
+        <div class="panel">
+            <div class="utility-controls">
+                <h2>Generated JSON Data</h2>
+                <div class="utility-buttons-container">
+                    <button id="addMatchBtn" class="utility-button add-match-button">
+                        <i>➕</i> Add Empty Match
+                    </button>
+                    <button id="encryptUrlsBtn" class="utility-button encrypt-button">
+                        <i>🔒</i> Encrypt URLs
+                    </button>
+                    <button id="copyBtn" class="utility-button">
+                        <i>📋</i> Copy to Clipboard
+                    </button>
+                </div>
+            </div>
+            
+            <div id="jsonDisplay" class="json-display"></div>
+        </div>
+
+        <div class="panel">
+            <h2>How to Use</h2>
+            <ol style="text-align: left; padding-left: 20px;">
+                <li>Click on an API button to fetch and generate match data</li>
+                <li>Enter the stream URLs in the "Edit Stream URLs" section</li>
+                <li>Click "Update URLs in JSON" to update the JSON with your URLs</li>
+                <li>Click "Encrypt URLs" to encrypt all URLs using the RKN encryption method</li>
+                <li>Click "Copy to Clipboard" to copy the final JSON with encrypted URLs</li>
+            </ol>
+        </div>
+        
+        <footer>
+            &copy; 2025 Sports Data Generator | Last Updated: February 26, 2025
+        </footer>
+    </div>
+    
+    <!-- Required for URL encryption -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    
+    <!-- Main script file -->
+    <script src="androidscript.js"></script>
+</body>
+</html>
